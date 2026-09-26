@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: the-common-grounds-cafe-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: CG_DATA_DIR
+        value: /var/data/cafe
+      - key: HOST
+        value: 0.0.0.0
+      - key: TRUST_PROXY
+        value: "1"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+    disk:
+      name: cafe-data
+      mountPath: /var/data
+      sizeGB: 1
