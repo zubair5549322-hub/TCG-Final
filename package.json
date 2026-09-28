@@ -6,11 +6,12 @@
     "frontend"
   ],
   "scripts": {
-    "build": "npm run build --workspace=frontend",
     "dev": "npm run dev --workspace=frontend",
-    "preview": "npm run preview --workspace=frontend"
+    "build": "npm run build --workspace=frontend",
+    "preview": "npm run preview --workspace=frontend",
+    "start": "npm run preview --workspace=frontend"
   },
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   }
 }
